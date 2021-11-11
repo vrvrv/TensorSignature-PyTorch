@@ -1,0 +1,10 @@
+# @package _global_
+
+model:
+  rank: 15
+
+logger:
+  wandb:
+    name: ts_rank_15
+    job_type: train
+    tags: [ 'ts', 'rank15' ]

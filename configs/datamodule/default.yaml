@@ -1,0 +1,6 @@
+_target_: src.datamodule.emptyDataModule
+
+name: ts
+data_dir: ${data_dir}/${datamodule.name}/snv.pkl
+batch_size: 128
+num_workers: 8
