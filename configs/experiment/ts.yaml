@@ -1,0 +1,8 @@
+# @package _global_
+
+model:
+  rank: 2
+  snv_shape: [ 3, 3, 16, 4, 2, 96, 2778 ]
+
+datamodule:
+  name: ts

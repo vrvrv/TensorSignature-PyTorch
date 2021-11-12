@@ -190,10 +190,10 @@ class TensorSignature(pl.LightningModule):
         self.log("train_loss", loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         return loss
 
-    def validation_step(self, batch, batch_idx):
-        C, idx = batch
-        loss = self(C, idx)
-        self.log("val_loss", loss, on_step=False, on_epoch=True, prog_bar=True, logger=True, sync_dist=True)
+    # def validation_step(self, batch, batch_idx):
+    #     C, idx = batch
+    #     loss = self(C, idx)
+    #     self.log("val_loss", loss, on_step=False, on_epoch=True, prog_bar=True, logger=True, sync_dist=True)
 
     def test_step(self, batch, batch_idx):
         C, idx = batch

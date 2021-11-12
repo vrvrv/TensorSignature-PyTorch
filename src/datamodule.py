@@ -50,11 +50,11 @@ class emptyDataModule(LightningDataModule):
     def setup(self, stage=None) -> None:
         SNV = SNVDataset(data_dir=self.hparams.data_dir)
 
-        self.train, self.val = random_split(
-            SNV, [int(len(SNV) * 0.9), len(SNV) - int(len(SNV) * 0.9)]
-        )
+        # self.train, self.val = random_split(
+        #     SNV, [int(len(SNV) * 0.9), len(SNV) - int(len(SNV) * 0.9)]
+        # )
 
-        self.test = SNV
+        self.train = self.test = SNV
 
     def train_dataloader(self):
         return DataLoader(
@@ -65,14 +65,14 @@ class emptyDataModule(LightningDataModule):
             shuffle=True
         )
 
-    def val_dataloader(self):
-        return DataLoader(
-            dataset=self.val,
-            batch_size=self.hparams.batch_size,
-            num_workers=self.hparams.num_workers,
-            collate_fn=collate_fn,
-            shuffle=False
-        )
+    # def val_dataloader(self):
+    #     return DataLoader(
+    #         dataset=self.val,
+    #         batch_size=self.hparams.batch_size,
+    #         num_workers=self.hparams.num_workers,
+    #         collate_fn=collate_fn,
+    #         shuffle=False
+    #     )
 
     def test_dataloader(self):
         return DataLoader(

@@ -6,7 +6,10 @@ You can run the code with one of the configurations saved at [configs/experiment
 
 ## Train and Test
 ```bash
-python run.py experiment=<config_file_name>
+python run.py experiment=<config_file_name> model.rank=<rank> model.size=<tau>
+
+# example
+# python run.py experiment=alz model.rank=3 model.size=20
 ```
 
 Especially, the logger used in the code is [**wandb**](https://wandb.ai/). So you need the **wandb** account in advance.
