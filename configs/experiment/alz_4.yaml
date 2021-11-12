@@ -1,0 +1,14 @@
+# @package _global_
+
+model:
+  rank: 4
+  snv_shape: [ 3, 3, 16, 4, 2, 96, 69 ]
+
+datamodule:
+  name: alz
+
+logger:
+  wandb:
+    name: alz_rank_04
+    job_type: train
+    tags: ['alz', 'rank4']
